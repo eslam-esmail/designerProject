@@ -1,0 +1,47 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Turn rewriting on
+    Options +FollowSymLinks
+    RewriteEngine On
+    # Redirect requests to index.php
+    RewriteCond %{REQUEST_URI} !=/index.php
+    RewriteCond %{REQUEST_URI} !.*\.png$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.jpg$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.gif$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.mp4$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.mov$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.flv$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.mp3$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.rmvb$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.avi$ [NC]
+    RewriteCond %{REQUEST_URI} !.*\.wmv$ [NC]
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>
+
+# One year for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico|svg|woff2)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# One month for css and js
+<filesMatch ".(css|js|ttf)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
+

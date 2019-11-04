@@ -1,0 +1,20 @@
+<?php
+
+define('JO_SALES_NAME', 'OlaHub sales');
+define('JO_SALES_EMAIL', 'salesTeam@olahub.com');
+define('DEF_IMAGE', 'defaults/5b5d862798ff2.jpg');
+define('DEF_BANNER', 'defaults/5b5e1d25bd0e1.jpg');
+define('DEF_SHOP_BANNER', 'defaults/5b5e1d25bd0e1.jpg');
+define('DEF_BRAND_BANNER', 'defaults/5b5e1d25bd0e1.jpg');
+define('DEF_CATEGORY_BANNER', 'defaults/5b5e1d25bd0e1.jpg');
+define('DEF_COVER_PHOTO', 'defaults/26419976192.jpg');
+define('CRYPT_COST', '11');
+define('BILL_PREF', 'OH');
+define('STORAGE_URL', 'https://olahub.co');
+define('PRODUCTION_LEVEL', false);
+define('PAGINATE_COUNT', 15);
+define('WEEK_END_DATES', [6,7]);
+define('REQUEST_DATA_TYPE', "postMan");
+define('VIDEO_EXT', ['mp4', 'mov', 'avi', 'wmv', 'mpg', '3gp', 'flv']);
+define('IMAGE_EXT', ['gif', 'jpg', 'jpeg', 'png', 'bmp']);
+define('MIME_TYPES', ['video/quicktime','video/3gpp', 'application/pdf', 'video/x-msvideo', 'image/bmp', 'video/x-flv', 'image/gif', 'image/jpeg', 'image/x-citrix-jpeg', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'video/x-ms-wmv', 'video/mp4', 'application/mp4', 'video/webm', 'image/png', 'image/x-citrix-png', 'image/x-png']);
